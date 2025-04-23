@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/23 20:42:34 by akosmeni          #+#    #+#             */
+/*   Updated: 2025/04/23 20:42:42 by akosmeni         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include <stdio.h>
 /*
@@ -128,9 +140,15 @@ int main(){
     ft_memcpy(dest, str, 3);
     printf("After memcpy: %s\n", dest);*/
 
-    char str[30] = "Hello";
+    /*char str[30] = "Hello";
     printf("Before memmove: %s\n", str);
     ft_memmove(str+2, str, 1);
-    printf("After memmove: %s\n", str);
+    printf("After memmove: %s\n", str);*/
+
+    char str[7];
+    printf("Before strlcpy: %s\n", str);
+    printf("Size: %ld\n", ft_strlcpy(str, "Hello", sizeof(str)));
+    printf("After strlcpy: %s\n", str);
+    
     return 0;
 }

@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akosmeni <akosmeni@student.42vienna.c      +#+  +:+       +#+        */
+/*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 09:21:45 by akosmeni          #+#    #+#             */
-/*   Updated: 2025/04/23 09:21:48 by akosmeni         ###   ########.fr       */
+/*   Updated: 2025/04/23 18:58:57 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 #define LIBFT_H
 
-#include <string.h>
+#include <aio.h>
 
 int     ft_isalpha(int  c);
 int     ft_isdigit(int c);
@@ -25,5 +25,6 @@ void    *ft_memset(void *s, int c, size_t n);
 void    ft_bzero(void *s, size_t n);
 void *ft_memcpy(void *dest, const void *src, size_t n);
 void *ft_memmove(void *dest, const void *src, size_t n);
+size_t ft_strlcpy(char *dst, const char *src, size_t size);
 
 #endif //LIBFT_H

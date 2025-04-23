@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akosmeni <akosmeni@student.42vienna.c      +#+  +:+       +#+        */
+/*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 09:20:50 by akosmeni          #+#    #+#             */
-/*   Updated: 2025/04/23 09:21:17 by akosmeni         ###   ########.fr       */
+/*   Updated: 2025/04/23 20:42:44 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
