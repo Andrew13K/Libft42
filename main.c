@@ -6,12 +6,14 @@
 /*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 20:42:34 by akosmeni          #+#    #+#             */
-/*   Updated: 2025/04/23 20:42:42 by akosmeni         ###   ########.fr       */
+/*   Updated: 2025/04/24 12:38:26 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
+#include <string.h>
+#include <limits.h>
 /*
 void test_ft_isalnum(){
     printf("1 - True, 0 - False\n");
@@ -51,7 +53,7 @@ void test_ft_isascii(){
     for (unsigned char c = 0; c <= 127; c++)
         printf("Is '%c' ascii character? %d\n", c, ft_isascii(c));
 
-    printf("\nTest 2: Extended Unsigned Char (128 - 255)\n\n");
+    printf("\nTest 2: Extended Unsigned Char (128 - 255)\n\n"); 
     for (unsigned int c = 128; c <= 255; c++)
         printf("Is '%d' ascii character? %d\n", c, ft_isascii(c));
 
@@ -145,10 +147,51 @@ int main(){
     ft_memmove(str+2, str, 1);
     printf("After memmove: %s\n", str);*/
 
-    char str[7];
+    /*char str[7];
     printf("Before strlcpy: %s\n", str);
     printf("Size: %ld\n", ft_strlcpy(str, "Hello", sizeof(str)));
-    printf("After strlcpy: %s\n", str);
+    printf("After strlcpy: %s\n", str);*/
+
+    /*const char *s = "";
+    int num = ft_atoi(s);
+    printf("%d\n", num);
+    printf("%d\n", ft_atoi("123"));
+    printf("%d\n", ft_atoi("         123"));
+    printf("%d\n", ft_atoi("        ---3=123"));
+    printf("%d\n", ft_atoi("assad123"));
+    printf("%d\n", ft_atoi("          asdasd123"));
+    printf("%d\n", ft_atoi("0123"));
+    printf("%d\n", ft_atoi(" ++ --- 123"));
+    printf("%d\n", ft_atoi("1  sd23"));
+    printf("%d\n", ft_atoi("    +123"));
+    printf("%d\n", ft_atoi("        -123"));*/
+
+    /*char buffer[20] = "Hello";
+
+    size_t len1 = ft_strlcat(buffer, " there", sizeof(buffer));
+    printf("1. Result: '%s', Returned: %zu\n", buffer, len1);
+
+    size_t len2 = ft_strlcat(buffer, " World!", 10);
+    printf("2. Result: '%s', Returned: %zu\n", buffer, len2);
+  
+    size_t len3 = ft_strlcat(buffer, "!", 5);
+    printf("3. Result: '%s', Returned: %zu\n", buffer, len3);*/
     
+    /*printf("%c\n",ft_toupper('a'));
+    printf("%c\n",ft_toupper('z'));
+    printf("%c\n",ft_toupper('A'));
+    printf("%c\n",ft_toupper('C'));
+    printf("%c\n",ft_toupper(65));
+    printf("%c\n",ft_toupper('1'));*/
+
+    /*printf("%s\n", ft_strrchr("Hello", 'l'));
+    printf("%s\n", ft_strrchr("Hello", '\0'));
+
+    printf("%s\n", strrchr("Hello", 'l'));
+    printf("%s\n", strrchr("Hello", '\0'));*/
+
+    // Test Case 1: Equal Strings
+    printf("%d\n", ft_strncmp("Hel\0lo", "Helpp", 5));
+
     return 0;
 }
