@@ -6,7 +6,7 @@
 /*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 20:42:34 by akosmeni          #+#    #+#             */
-/*   Updated: 2025/04/24 12:38:26 by akosmeni         ###   ########.fr       */
+/*   Updated: 2025/04/28 15:34:38 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -287,8 +287,28 @@ int main(){
    
    char *s = "Hello";
    unsigned char c = 'l';
-   char *res = (char *)ft_memchr(s, c, 3);
-   printf("%c found at the position: %s",c, res);
+   char *res = (char *)memchr(s, c, 3);
+   printf("Test 1: %c found at the position: %s\n",c, res);
+
+   char *sa = "Hello";
+   unsigned char cj = 'l';
+   char *resr = (char *)memchr(sa, cj, 1);
+   printf("Test 2: %c found at the position: %s\n",cj, resr);
+
+   char *sad = "Help";
+   unsigned char cjs = 'l';
+   char *rese = (char *)memchr(sad, cjs, 10);
+   printf("Test 3: %c found at the position: %s\n",cjs, rese);
+
+   char *sawe = "";
+   unsigned char cjyt = 'l';
+   char *resu = (char *)memchr(sawe, cjyt, 1);
+   printf("Test 4: %c found at the position: %s\n",cjyt, resu);
+
+   int saw[4] = {12, 1202, 345, 0x65};
+   unsigned char cjy = 0;
+   char *resuy = (char *)memchr(saw, cjy, 1);
+   printf("Test 5: %c found at the position: %s\n",cjy, resuy);
 
    return 0;
 }
