@@ -191,7 +191,104 @@ int main(){
     printf("%s\n", strrchr("Hello", '\0'));*/
 
     // Test Case 1: Equal Strings
-    printf("%d\n", ft_strncmp("Hel\0lo", "Helpp", 5));
+    //printf("%d\n", ft_strncmp("Hel\0lo", "Helpp", 5));
 
-    return 0;
+    
+   
+    /*// Test Case 1: Identical Memory Blocks
+    char block1[] = "hello";
+    char block2[] = "hello";
+    printf("Test 1: %d\n", ft_memcmp(block1, block2, 5)); // Expected: 0
+
+    // Test Case 2: Blocks are Identical But One Character Larger
+    char block3[] = "hello";
+    char block4[] = "helloo";
+    printf("Test 2: %d\n", ft_memcmp(block3, block4, 6)); // Expected: 0
+
+    // Test Case 3: First Block is Lexicographically Smaller
+    char block5[] = "abc";
+    char block6[] = "abcd";
+    printf("Test 3: %d\n", ft_memcmp(block5, block6, 4)); // Expected: 0
+
+    // Test Case 4: First Block is Lexicographically Greater
+    char block7[] = "zebra";
+    char block8[] = "apple";
+    printf("Test 4: %d\n", ft_memcmp(block7, block8, 5)); // Expected: Positive value
+
+    // Test Case 5: Different Data, First Block Smaller
+    char block9[] = {1, 2, 3};
+    char block10[] = {1, 2, 4};
+    printf("Test 5: %d\n", ft_memcmp(block9, block10, 3)); // Expected: Negative value
+
+    // Test Case 6: Different Data, First Block Larger
+    char block11[] = {10, 20, 30};
+    char block12[] = {5, 20, 30};
+    printf("Test 6: %d\n", ft_memcmp(block11, block12, 3)); // Expected: Positive value
+
+    // Test Case 7: Partial Block Comparison
+    char block13[] = "apple";
+    char block14[] = "apricot";
+    printf("Test 7: %d\n", ft_memcmp(block13, block14, 3)); // Expected: 0
+
+    // Test Case 8: Null Termination Difference
+    char block15[] = "abc";
+    char block16[] = "abc\0\0";
+    printf("Test 8: %d\n", ft_memcmp(block15, block16, 5)); // Expected: 0
+
+    // Test Case 9: Compare Large Arrays
+    int block17[5] = {10, 20, 30, 40, 50};
+    int block18[5] = {10, 20, 31, 40, 50};
+    printf("Test 9: %d\n", ft_memcmp(block17, block18, sizeof(block17))); // Expected: Negative value
+
+   // Test Case 1: Identical Memory Blocks
+   char block1111[] = "hello";
+   char block21[] = "hello";
+   printf("\n\nTest 1: %d\n", memcmp(block1111, block21, 5)); // Expected: 0
+
+   // Test Case 2: Blocks are Identical But One Character Larger
+   char block31[] = "hello";
+   char block41[] = "helloo";
+   printf("Test 2: %d\n", memcmp(block31, block41, 6)); // Expected: 0
+
+   // Test Case 3: First Block is Lexicographically Smaller
+   char block51[] = "abc";
+   char block61[] = "abcd";
+   printf("Test 3: %d\n", memcmp(block51, block61, 4)); // Expected: 0
+
+   // Test Case 4: First Block is Lexicographically Greater
+   char block71[] = "zebra";
+   char block81[] = "apple";
+   printf("Test 4: %d\n", memcmp(block71, block81, 5)); // Expected: Positive value
+
+   // Test Case 5: Different Data, First Block Smaller
+   char block91[] = {1, 2, 3};
+   char block101[] = {1, 2, 4};
+   printf("Test 5: %d\n", memcmp(block91, block101, 3)); // Expected: Negative value
+
+   // Test Case 6: Different Data, First Block Larger
+   char block111[] = {10, 20, 30};
+   char block121[] = {5, 20, 30};
+   printf("Test 6: %d\n", memcmp(block111, block121, 3)); // Expected: Positive value
+
+   // Test Case 7: Partial Block Comparison
+   char block131[] = "apple";
+   char block141[] = "apricot";
+   printf("Test 7: %d\n", memcmp(block131, block141, 3)); // Expected: 0
+
+   // Test Case 8: Null Termination Difference
+   char block151[] = "abc";
+   char block161[] = "abc\0\0";
+   printf("Test 8: %d\n", memcmp(block151, block161, 5)); // Expected: 0
+
+   // Test Case 9: Compare Large Arrays
+   int block171[5] = {10, 20, 30, 40, 50};
+   int block181[5] = {10, 20, 31, 40, 50};
+   printf("Test 9: %d\n", memcmp(block171, block181, sizeof(block17))); // Expected: Negative value*/
+   
+   char *s = "Hello";
+   unsigned char c = 'l';
+   char *res = (char *)ft_memchr(s, c, 3);
+   printf("%c found at the position: %s",c, res);
+
+   return 0;
 }
