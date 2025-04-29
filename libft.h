@@ -6,7 +6,7 @@
 /*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 09:21:45 by akosmeni          #+#    #+#             */
-/*   Updated: 2025/04/24 12:52:31 by akosmeni         ###   ########.fr       */
+/*   Updated: 2025/04/29 14:23:07 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,14 @@ int ft_lower(int c);
 char *ft_strchr(const char *s, int c);
 char *ft_strrchr(const char *s, int c);
 int ft_strncmp(const char *s1, const char *s2, size_t n);
-void *ft_memchr(const void *s, int c, size_t n);
+void *ft_memchr(const void *s, int c, size_t n);//??????
 int ft_memcmp(const void *s1, const void *s2, size_t n);
+char *ft_strnstr(const char *big, const char *little, size_t len);
 int ft_atoi(const char *str);
+
+void *ft_calloc(size_t nmemb, size_t size);//??????????
+char *ft_strdup(const char *s);
+
+char *ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif //LIBFT_H

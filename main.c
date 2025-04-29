@@ -6,13 +6,14 @@
 /*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 20:42:34 by akosmeni          #+#    #+#             */
-/*   Updated: 2025/04/28 15:34:38 by akosmeni         ###   ########.fr       */
+/*   Updated: 2025/04/29 14:11:28 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #include <limits.h>
 /*
 void test_ft_isalnum(){
@@ -285,7 +286,7 @@ int main(){
    int block181[5] = {10, 20, 31, 40, 50};
    printf("Test 9: %d\n", memcmp(block171, block181, sizeof(block17))); // Expected: Negative value*/
    
-   char *s = "Hello";
+   /*char *s = "Hello";
    unsigned char c = 'l';
    char *res = (char *)memchr(s, c, 3);
    printf("Test 1: %c found at the position: %s\n",c, res);
@@ -308,7 +309,43 @@ int main(){
    int saw[4] = {12, 1202, 345, 0x65};
    unsigned char cjy = 0;
    char *resuy = (char *)memchr(saw, cjy, 1);
-   printf("Test 5: %c found at the position: %s\n",cjy, resuy);
+   printf("Test 5: %c found at the position: %s\n",cjy, resuy);*/
+
+    /*char *big = "";
+    char *little = "world";
+    char *res  = ft_strnstr(big, little, 16);
+    printf("%s\n", res);*/
+
+    /*int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    int *arr = ft_calloc(num, sizeof(int));
+
+    if (arr == NULL)
+    {
+        printf("Memory allocation failed!\n");
+        return 1;
+    }
+    for(int i = 0;i<num;i++){
+        printf("%d", arr[i]);
+    }
+    free(arr);
+    arr = NULL;*/
+
+    const char *original = "Hello, World!";
+    
+    char *duplicate = ft_strdup(original);
+    
+    if (duplicate == NULL) {
+        printf("Memory allocation failed!\n");
+        return 1;
+    }
+    
+    printf("Original: %s\n", original);
+    printf("Duplicate: %s\n", duplicate);
+
+    free(duplicate);
 
    return 0;
 }
