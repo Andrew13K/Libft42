@@ -6,14 +6,15 @@
 /*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 12:41:45 by akosmeni          #+#    #+#             */
-/*   Updated: 2025/04/24 12:41:46 by akosmeni         ###   ########.fr       */
+/*   Updated: 2025/04/29 15:49:20 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_lower(int c){
-    if (c >= 'A' && c <= 'Z')
-        return c+32; 
-    return c;
+int	ft_lower(int c)
+{
+	if (c >= 'A' && c <= 'Z')
+		return (c + 32);
+	return (c);
 }
