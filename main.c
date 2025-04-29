@@ -6,7 +6,7 @@
 /*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 20:42:34 by akosmeni          #+#    #+#             */
-/*   Updated: 2025/04/29 14:11:28 by akosmeni         ###   ########.fr       */
+/*   Updated: 2025/04/29 15:18:07 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -333,7 +333,7 @@ int main(){
     free(arr);
     arr = NULL;*/
 
-    const char *original = "Hello, World!";
+    /*const char *original = "Hello, World!";
     
     char *duplicate = ft_strdup(original);
     
@@ -345,7 +345,12 @@ int main(){
     printf("Original: %s\n", original);
     printf("Duplicate: %s\n", duplicate);
 
-    free(duplicate);
+    free(duplicate);*/
+
+    const char *original = "Hello, World!";
+    
+    printf("Original: %s\n", ft_substr(original, 15, 3));
+
 
    return 0;
 }
