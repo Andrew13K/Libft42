@@ -1,2 +1,6 @@
 .vscode/
 tests/
+obj/
+a.out
+comp
+*.o

@@ -6,7 +6,7 @@
 /*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 20:42:34 by akosmeni          #+#    #+#             */
-/*   Updated: 2025/04/29 15:18:07 by akosmeni         ###   ########.fr       */
+/*   Updated: 2025/04/30 17:19:04 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -347,10 +347,14 @@ int main(){
 
     free(duplicate);*/
 
-    const char *original = "Hello, World!";
+    /*const char *original = "Hello, World!";
     
-    printf("Original: %s\n", ft_substr(original, 15, 3));
+    printf("Original: %s\n", ft_substr(original, 15, 3));*/
+	char *str1 = "Hello ";
+	char *str2 = "World!";
 
+	char *res = ft_strjoin(str1, str2);
+	printf("%s\n", res);
 
    return 0;
 }
