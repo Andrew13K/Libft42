@@ -1,26 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/23 20:42:18 by akosmeni          #+#    #+#             */
-/*   Updated: 2025/04/30 20:16:01 by akosmeni         ###   ########.fr       */
+/*   Created: 2025/04/30 17:37:47 by akosmeni          #+#    #+#             */
+/*   Updated: 2025/04/30 19:11:10 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
 
-void *ft_memcpy(void *dest, const void *src, size_t n){
-    size_t	i;
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	char	*str_trim;
+	char	*top;
+	int		i;
+	int		j;
+	int		k;
 
 	i = 0;
-	while (i < n)
+	k = 0;
+	top = malloc(ft_strlen(s1) * (sizeof(char)) + 1);
+	if (!top)
+		return (NULL);
+	while (s1[i] != '\0')
 	{
-		dest = *(char *)src;
+		j = 0;
+		while (set[j] != '\0')
+		{
+			if (s1[i] != set[j])
+			{
+				top[k] = s1[i];
+			}
+			
+			j++;
+		}
 		i++;
+		k++;
 	}
-    return (dest);
+	top[k+1] = '\0'; 
+	return (top);
 }

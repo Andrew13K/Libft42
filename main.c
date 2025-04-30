@@ -6,7 +6,7 @@
 /*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 20:42:34 by akosmeni          #+#    #+#             */
-/*   Updated: 2025/04/30 17:19:04 by akosmeni         ###   ########.fr       */
+/*   Updated: 2025/04/30 20:23:27 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,11 +127,14 @@ int main(){
 
     //CHECK EACH FUNCTION AFTER strlen()
 
-    /*char str[20] = "Hello";
-    printf("Before memset: %s\n", str);
-    memset(str+3, '.', 2*sizeof(char));
-    printf("After memset: %s\n", str);*/
+    char str1[20] = "Hello";
+	const char *re = "rekerj";
+	size_t r = 1;
+    printf("Before memset: %s\n", str1);
+    memcpy(str1, re, r);
+    printf("After memset: %s\n\n", str1);
 
+	
     /*char str[20] = "Hello";
     printf("Before memset: %s\n", str);
     ft_bzero(str+3, sizeof(str));
@@ -350,11 +353,12 @@ int main(){
     /*const char *original = "Hello, World!";
     
     printf("Original: %s\n", ft_substr(original, 15, 3));*/
-	char *str1 = "Hello ";
-	char *str2 = "World!";
+	/*char *str1 = "Hel,.,.,.,.,.,.,..,.,...lo";
+	char *str2 = ".,";
 
-	char *res = ft_strjoin(str1, str2);
+	char *res = ft_strtrim(str1, str2);
 	printf("%s\n", res);
+	free(res);*/
 
    return 0;
 }
