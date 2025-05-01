@@ -6,7 +6,7 @@
 /*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 17:49:47 by andrey            #+#    #+#             */
-/*   Updated: 2025/04/30 20:12:52 by akosmeni         ###   ########.fr       */
+/*   Updated: 2025/05/01 12:01:29 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 void	ft_bzero(void *s, size_t n)
 {
 	size_t	i;
+	char	*temp;
 
 	i = 0;
+	temp = (char *)s;
 	while (i < n)
 	{
-		*(char *)s = '\0';
+		temp[i] = '\0';
 		i++;
 	}
 }
