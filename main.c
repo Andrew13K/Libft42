@@ -6,7 +6,7 @@
 /*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 20:42:34 by akosmeni          #+#    #+#             */
-/*   Updated: 2025/05/01 17:02:26 by akosmeni         ###   ########.fr       */
+/*   Updated: 2025/05/02 13:08:49 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,29 +17,17 @@
 #include <bsd/stdlib.h>
 
 int main() {
-    char *s = "Hello";
-	char *c = "ll";
-	char  *res = ft_strnstr(s, c, 3);
-	printf("In string - '%s', char - '%s', returns pointer: '%s'\n\n", s,c,res);
+	int num;
+	printf("Enter the number of elements: ");
+	scanf("%d", &num);
 
-	s = "";
-	c = "Hello";
-	res = ft_strnstr(s, c, 2);
-	printf("In string - '%s', char - '%s', returns pointer: '%s'\n\n", s,c,res);
-
-	s = "How are you";
-	c = "are";
-	res = ft_strnstr(s, c, 8);
-	printf("In string - '%s', char - '%s', returns pointer: '%s'\n\n", s,c,res);
-
-	s = "How are you";
-	c = "";
-	res = ft_strnstr(s, c, 6);
-	printf("In string - '%s', char - '%s', returns pointer: '%s'\n\n", s,c,res);
-
-	s = "Hello ll lsldj ll";
-	c = "l";
-	res = ft_strnstr(s, c, 4);
-	printf("In string - '%s', char - '%s', returns pointer: '%s'\n\n", s,c,res);
+	int *res = ft_calloc(num, sizeof(char));
+	if (res == NULL)
+		return 1;
+	for (int i = 0; i < num; i++)
+		printf("%d, ",res[i]);
+		
+	free(res);
+	res = NULL;
     return 0;
 }
