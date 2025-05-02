@@ -6,7 +6,7 @@
 /*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 17:37:47 by akosmeni          #+#    #+#             */
-/*   Updated: 2025/04/30 19:11:10 by akosmeni         ###   ########.fr       */
+/*   Updated: 2025/05/02 14:21:05 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,16 @@
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*str_trim;
-	char	*top;
+	unsigned char *s = (unsigned char *)s1;
+	char	*s1_copy;
 	int		i;
-	int		j;
-	int		k;
+	int j;
+	int k;
 
 	i = 0;
 	k = 0;
-	top = malloc(ft_strlen(s1) * (sizeof(char)) + 1);
-	if (!top)
+	s1_copy = malloc(ft_strlen(s1) * (sizeof(char)) + 1);
+	if (!s1_copy)
 		return (NULL);
 	while (s1[i] != '\0')
 	{
@@ -34,14 +35,27 @@ char	*ft_strtrim(char const *s1, char const *set)
 		{
 			if (s1[i] != set[j])
 			{
-				top[k] = s1[i];
+				s[k] = s[k + 1];
 			}
-			
+				
 			j++;
 		}
 		i++;
 		k++;
 	}
-	top[k+1] = '\0'; 
-	return (top);
+	s[k] = '\0';
+	printf("%s", s);
+	return (s1_copy);
 }
+/*while (s1[i] != '\0')
+	{
+		more_start = start + 1;
+		while (set[j] != '\0')
+		{
+			if (*start != set[j])
+				more_start = start;
+			j++;
+		}
+		i++;
+		start++;
+	}*/

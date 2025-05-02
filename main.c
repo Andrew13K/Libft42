@@ -6,7 +6,7 @@
 /*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 20:42:34 by akosmeni          #+#    #+#             */
-/*   Updated: 2025/05/02 13:08:49 by akosmeni         ###   ########.fr       */
+/*   Updated: 2025/05/02 14:08:54 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,8 @@
 #include <bsd/stdlib.h>
 
 int main() {
-	int num;
-	printf("Enter the number of elements: ");
-	scanf("%d", &num);
-
-	int *res = ft_calloc(num, sizeof(char));
-	if (res == NULL)
-		return 1;
-	for (int i = 0; i < num; i++)
-		printf("%d, ",res[i]);
-		
-	free(res);
-	res = NULL;
+	char *s = "Helld";
+	char *set = "l";
+	ft_strtrim(s,set);
     return 0;
 }
