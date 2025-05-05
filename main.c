@@ -6,7 +6,7 @@
 /*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 20:42:34 by akosmeni          #+#    #+#             */
-/*   Updated: 2025/05/02 14:08:54 by akosmeni         ###   ########.fr       */
+/*   Updated: 2025/05/05 12:17:18 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,26 @@
 #include <assert.h>
 #include <bsd/string.h>
 #include <bsd/stdlib.h>
+#include <limits.h>
 
 int main() {
-	char *s = "Helld";
-	char *set = "l";
-	ft_strtrim(s,set);
+	/*char *s = "Helloshowsaresyou";
+	char ch = 's';
+	char *res[4] = {"hello","ejhd","dfds","rtre"};
+	for (int i = 0; res[i] != NULL; i++)
+	{
+		for (int j = 0; res[i][j] != '\0'; j++)
+		{
+			printf("%c", res[i][j]);
+		}
+		printf("\n");
+	}*/
+
+	int n = 0;
+
+	char *res = ft_itoa(n);
+	printf("Integer: %d, converts into string: %s\n", n, res);
+	
+	free(res);
     return 0;
 }
