@@ -6,12 +6,11 @@
 /*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 11:19:56 by akosmeni          #+#    #+#             */
-/*   Updated: 2025/05/09 17:06:50 by akosmeni         ###   ########.fr       */
+/*   Updated: 2025/05/09 17:22:09 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 static int	count_digits(int long num)
 {
