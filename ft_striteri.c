@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/23 20:42:34 by akosmeni          #+#    #+#             */
-/*   Updated: 2025/05/12 14:15:37 by akosmeni         ###   ########.fr       */
+/*   Created: 2025/05/12 12:23:55 by akosmeni          #+#    #+#             */
+/*   Updated: 2025/05/12 14:16:33 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <assert.h>
-#include <limits.h>
 
-void toupper_index(unsigned int i, char *str)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	(void) i;
-	*str = 'X';
-}
+	unsigned int	i;
 
-int main() {
-	char arr[20] = "Hello";
-	void (*func)(unsigned int, char *) = &toupper_index;
-
-	ft_striteri(arr, func);
-    return 0;
+	i = 0;
+	if (!s)
+		return ;
+	while (s[i] != '\0')
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }
