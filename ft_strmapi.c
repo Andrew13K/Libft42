@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/23 20:42:34 by akosmeni          #+#    #+#             */
-/*   Updated: 2025/05/12 12:15:09 by akosmeni         ###   ########.fr       */
+/*   Created: 2025/05/12 10:02:59 by akosmeni          #+#    #+#             */
+/*   Updated: 2025/05/12 12:19:46 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <assert.h>
-#include <limits.h>
 
-char toupper_index(unsigned int num, char c)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	(void)num;
-	return ft_toupper(c);
-}
+	char			*str;
+	unsigned int	i;
 
-int main() {
-	char *arr = NULL;
-	char *res;
-	char (*func)(unsigned int, char) = &toupper_index;
-
-	res = ft_strmapi(arr, func);
-	printf("The result is: %s\n", res);
-    return 0;
+	i = 0;
+	if (!s)
+		return (NULL);
+	str = malloc((sizeof(char) * ft_strlen(s)) + 1);
+	if (!str)
+		return (NULL);
+	while (s[i] != '\0')
+	{
+		str[i] = f(i, s[i]);
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }
