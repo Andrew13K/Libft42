@@ -6,7 +6,7 @@
 /*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 08:58:40 by akosmeni          #+#    #+#             */
-/*   Updated: 2025/05/19 13:52:44 by akosmeni         ###   ########.fr       */
+/*   Updated: 2025/05/19 23:59:14 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static char	**alloc_memory_arr(char const *s, char c)
 			in_word = 1;
 			count++;
 		}
-		if (s[i] == c)
+		else if (s[i] == c)
 			in_word = 0;
 		i++;
 	}
@@ -54,7 +54,7 @@ static char	**alloc_memory_arr(char const *s, char c)
 	return (str);
 }
 
-static char	*alloc_memory_str(char *str, char c, char **res)
+static char	*alloc_memory_str(const char *str, char c)
 {
 	int		i;
 	char	*new_str;
@@ -64,52 +64,41 @@ static char	*alloc_memory_str(char *str, char c, char **res)
 		i++;
 	new_str = malloc((sizeof(char) * i) + 1);
 	if (!new_str)
-	{
-		free_str(res);
 		return (NULL);
-	}
 	return (new_str);
 }
 
-static char	**sort_str(char const *s, char c, char **res, int in_word)
+static char	**sort_str(char const *s, char c, char **res)
 {
 	int		i;
 	int		j;
-	char	*str;
-	int		num_str;
+	int		index;
 
 	i = 0;
-	num_str = 0;
+	index = 0;
 	while (s[i] != '\0')
 	{
-		j = 0;
-		if (s[i] != c && in_word == 0)
-		{
-			str = alloc_memory_str((char *)&s[i], c, res);
-			if (str == NULL)
-				return (NULL);
-			in_word = 1;
-			while (s[i] != c && s[i] != '\0')
-				str[j++] = s[i++];
-			str[j] = '\0';
-			res[num_str++] = str;
-		}
-		if (s[i] == c)
-		{
-			in_word = 0;
+		while (s[i] == c && s[i] != '\0')
 			i++;
-		}
+		if (s[i] == '\0')
+			break ;
+		res[index] = alloc_memory_str(&s[i], c);
+		if (!res)
+			return (free_str(res), NULL);
+		j = 0;
+		while (s[i] != c && s[i] != '\0')
+			res[index][j++] = s[i++];
+		res[index++][j] = '\0';
 	}
-	res[num_str] = NULL;
+	res[index] = NULL;
 	return (res);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**res;
-	int		in_word;
 
-	if (s == NULL)
+	if (!s)
 		return (NULL);
 	if (s[0] == '\0')
 	{
@@ -119,10 +108,9 @@ char	**ft_split(char const *s, char c)
 		res[0] = NULL;
 		return (res);
 	}
-	in_word = 0;
 	res = alloc_memory_arr(s, c);
-	res = sort_str(s, c, res, in_word);
 	if (!res)
 		return (NULL);
+	res = sort_str(s, c, res);
 	return (res);
 }

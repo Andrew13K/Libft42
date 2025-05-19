@@ -6,7 +6,7 @@
 /*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 19:05:26 by akosmeni          #+#    #+#             */
-/*   Updated: 2025/05/19 13:51:49 by akosmeni         ###   ########.fr       */
+/*   Updated: 2025/05/20 00:00:23 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	size_t	i;
+	size_t			i;
 	unsigned char	*temp;
 
 	i = 0;
