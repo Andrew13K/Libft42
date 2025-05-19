@@ -1,19 +1,16 @@
 CC=cc
 NAME=libft.a
-OBJ_DIR=obj/
 CFLAGS= -Wall -Wextra -Werror
 SRC:=$(wildcard *.c)
-OBJ:=$(patsubst %.c,$(OBJ_DIR)/%.o,$(SRC))
+OBJ:=$(SRC:.c=.o)
 
-all:$(OBJ_DIR) $(NAME)
+all: $(NAME)
 $(NAME):$(OBJ)
-	ar rcs $@ $^
-$(OBJ_DIR)/%.o:%.c
-	$(CC) $(CFLAGS) -c $< -o $@
-$(OBJ_DIR):
-	mkdir -p $@
+	ar rcs $(NAME) $(OBJ)
 clean:
 	rm -f $(OBJ)
 fclean:clean
 	rm -f $(NAME)
 re:fclean all
+
+.PHONY: all clean fclean re

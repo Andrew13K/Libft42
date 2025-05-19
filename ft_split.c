@@ -6,7 +6,7 @@
 /*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 08:58:40 by akosmeni          #+#    #+#             */
-/*   Updated: 2025/05/11 20:24:10 by akosmeni         ###   ########.fr       */
+/*   Updated: 2025/05/19 13:52:44 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,6 @@ static char	**sort_str(char const *s, char c, char **res, int in_word)
 char	**ft_split(char const *s, char c)
 {
 	char	**res;
-	int		num_str;
 	int		in_word;
 
 	if (s == NULL)
@@ -120,7 +119,6 @@ char	**ft_split(char const *s, char c)
 		res[0] = NULL;
 		return (res);
 	}
-	num_str = 0;
 	in_word = 0;
 	res = alloc_memory_arr(s, c);
 	res = sort_str(s, c, res, in_word);
