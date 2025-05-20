@@ -6,7 +6,7 @@
 /*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 20:42:34 by akosmeni          #+#    #+#             */
-/*   Updated: 2025/05/16 13:01:31 by akosmeni         ###   ########.fr       */
+/*   Updated: 2025/05/20 14:19:26 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 #include <stdio.h>
 #include <assert.h>
 #include <limits.h>
+#include <string.h>
 
 int main() {
-	ft_putnbr_fd(218364, 1);
-	printf("\n");
+	char str[50] = "Hello, World!";
+    char *res;
+    res = ft_memmove(str + 6, str, 6);
+	printf("result: %s\n", res);
     return 0;
 }
