@@ -6,7 +6,7 @@
 /*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 09:37:23 by akosmeni          #+#    #+#             */
-/*   Updated: 2025/05/21 13:58:47 by akosmeni         ###   ########.fr       */
+/*   Updated: 2025/05/21 16:12:55 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t		i;
+	size_t				i;
 	const unsigned char	*temp_s1;
 	const unsigned char	*temp_s2;
 

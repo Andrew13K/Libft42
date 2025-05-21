@@ -6,7 +6,7 @@
 /*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 09:21:45 by akosmeni          #+#    #+#             */
-/*   Updated: 2025/05/19 16:02:19 by akosmeni         ###   ########.fr       */
+/*   Updated: 2025/05/21 16:12:06 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <stddef.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include <stdint.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
