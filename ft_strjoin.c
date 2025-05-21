@@ -6,7 +6,7 @@
 /*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 15:59:33 by akosmeni          #+#    #+#             */
-/*   Updated: 2025/05/20 15:09:10 by akosmeni         ###   ########.fr       */
+/*   Updated: 2025/05/21 12:54:56 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,31 +25,21 @@ static char	*check(char const *s1, char const *s2)
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*new_str;
+	char	*check_str;
 	char	*res;
-	int		len;
-	int		i;
-	int		j;
+	int		len1;
+	int		len2;
 
-	i = 0;
-	j = 0;
-	res = check(s1, s2);
-	if (res)
-		return (res);
-	len = ft_strlen(s1) + ft_strlen(s2);
-	new_str = malloc((sizeof(char) * len) + 1);
-	if (!new_str)
+	check_str = check(s1, s2);
+	if (check_str)
+		return (check_str);
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	res = malloc((sizeof(char) * (len1 + len2)) + 1);
+	if (!res)
 		return (NULL);
-	while (s1[i] != '\0')
-	{
-		new_str[i] = s1[i];
-		i++;
-	}
-	while (s2[j] != '\0')
-	{
-		new_str[i + j] = s2[j];
-		j++;
-	}
-	new_str[i + j] = '\0';
-	return (new_str);
+	ft_memcpy(res, s1, len1);
+	ft_memcpy(res + len1, s2, len2);
+	res[len1 + len2] = '\0';
+	return (res);
 }

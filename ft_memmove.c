@@ -6,7 +6,7 @@
 /*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 18:59:22 by akosmeni          #+#    #+#             */
-/*   Updated: 2025/05/19 14:40:43 by akosmeni         ###   ########.fr       */
+/*   Updated: 2025/05/21 14:13:17 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	s = (const char *)src;
 	d = (char *)dest;
-	if (!s || n == 0 || d == s)
+	if (n == 0 || d == s)
 		return (dest);
 	if (d > s && d < s + n)
 	{
