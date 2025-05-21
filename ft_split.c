@@ -6,7 +6,7 @@
 /*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 08:58:40 by akosmeni          #+#    #+#             */
-/*   Updated: 2025/05/21 11:44:35 by akosmeni         ###   ########.fr       */
+/*   Updated: 2025/05/21 15:17:28 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ static char	**sort_str(char const *s, char c, char **res)
 		if (s[i] == '\0')
 			break ;
 		res[index] = alloc_memory_str(&s[i], c);
-		if (!res)
+		if (!res[index])
 			return (free_str(res), NULL);
 		j = 0;
 		while (s[i] != c && s[i] != '\0')

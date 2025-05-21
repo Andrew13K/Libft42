@@ -6,7 +6,7 @@
 /*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 14:17:50 by akosmeni          #+#    #+#             */
-/*   Updated: 2025/05/20 14:37:23 by akosmeni         ###   ########.fr       */
+/*   Updated: 2025/05/21 15:20:24 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strdup(const char *s)
 	int		i;
 
 	i = 0;
+	if (!s)
+		return (NULL);
 	while (s[i] != '\0')
 		i++;
 	arr = malloc((i * sizeof(char)) + 1);

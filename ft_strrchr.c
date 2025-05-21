@@ -6,7 +6,7 @@
 /*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 12:41:42 by akosmeni          #+#    #+#             */
-/*   Updated: 2025/05/19 14:45:53 by akosmeni         ###   ########.fr       */
+/*   Updated: 2025/05/21 15:41:00 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ char	*ft_strrchr(const char *s, int c)
 	temp = NULL;
 	while (*s != '\0')
 	{
-		if (*s == (unsigned char)c)
+		if ((unsigned char)*s == (unsigned char)c)
 			temp = (char *)s;
 		s++;
 	}
-	if (c == '\0')
+	if ((unsigned char)c == '\0')
 		return ((char *)s);
 	return ((char *)temp);
 }

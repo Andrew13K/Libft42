@@ -6,7 +6,7 @@
 /*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 19:05:26 by akosmeni          #+#    #+#             */
-/*   Updated: 2025/05/20 00:00:23 by akosmeni         ###   ########.fr       */
+/*   Updated: 2025/05/21 15:12:48 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memset(void *s, int c, size_t n)
 
 	i = 0;
 	temp = (unsigned char *)s;
-	while (i < n && c >= 0 && c <= 126)
+	while (i < n)
 	{
 		temp[i] = (unsigned char)c;
 		i++;

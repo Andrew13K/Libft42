@@ -6,7 +6,7 @@
 /*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 12:41:36 by akosmeni          #+#    #+#             */
-/*   Updated: 2025/05/01 14:20:36 by akosmeni         ###   ########.fr       */
+/*   Updated: 2025/05/21 15:34:16 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	j = 0;
 	while (dest[i] != '\0')
 		i++;
-	if (src == NULL)
+	if (!src)
 		return (i);
 	k = 0;
 	while (src[k] != '\0')
