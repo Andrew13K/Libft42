@@ -6,7 +6,7 @@
 /*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 08:49:08 by akosmeni          #+#    #+#             */
-/*   Updated: 2025/05/21 13:24:43 by akosmeni         ###   ########.fr       */
+/*   Updated: 2025/05/22 13:54:13 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ int	ft_atoi(const char *str)
 
 	num = 0;
 	sign = 1;
-	if (!str)
-		return (0);
 	while (*str == ' ' || *str == '\t' || *str == '\n'
 		|| *str == '\r' || *str == '\v' || *str == '\f')
 		str++;

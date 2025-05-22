@@ -1,6 +1,6 @@
 #include <criterion/criterion.h>
 #include <criterion/redirect.h>
-#include "../libft.h"
+#include "../libft_files/libft.h"
 
 Test(ft_putstr_fd, simple_string)
 {

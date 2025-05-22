@@ -1,5 +1,5 @@
 #include <criterion/criterion.h>
-#include "../libft.h"
+#include "../libft_files/libft.h"
 #include <stdlib.h>
 
 char to_upper(unsigned int i, char c) {

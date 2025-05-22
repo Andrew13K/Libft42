@@ -1,4 +1,5 @@
-#include "../libft.h"
+#include "../libft_files/libft.h"
+#include <stdint.h>
 #include <criterion/criterion.h>
 #include <criterion/redirect.h>
 #include <stdlib.h>

@@ -1,4 +1,4 @@
-#include "../libft.h"
+#include "../libft_files/libft.h"
 #include <criterion/criterion.h>
 #include <ctype.h>
 

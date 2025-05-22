@@ -1,5 +1,5 @@
 #include <criterion/criterion.h>
-#include "../libft.h"
+#include "../libft_files/libft.h"
 #include <string.h>
 
 Test(ft_strncmp, basic_equal) {

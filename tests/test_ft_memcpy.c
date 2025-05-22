@@ -1,6 +1,6 @@
 #include <criterion/criterion.h>
 #include <string.h>
-#include "../libft.h"
+#include "../libft_files/libft.h"
 
 Test(ft_memcpy, identical_blocks)
 {

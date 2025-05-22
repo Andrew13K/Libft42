@@ -1,20 +1,27 @@
 #include <criterion/criterion.h>
 #include <string.h>
-#include "../libft.h"
+#include <signal.h>
+#include "../libft_files/libft.h"
 
-Test(ft_strlen, empty_string) {
-    cr_assert_eq(ft_strlen(""), strlen(""), "ft_strlen(\"\") should return 0");
-}
+Test(ft_strlen, testing_ft_strlen, .signal = SIGSEGV) {
+	cr_log_info("\n============= FT_STRLEN =============\n");
+	int size = strlen("Hello");
+    cr_assert_eq(ft_strlen("Hello"), strlen("Hello"), "Output should be: %d\n", size);
+	cr_log_info("✅ Test 1: Passed\n");
 
-Test(ft_strlen, regular_string) {
-    cr_assert_eq(ft_strlen("Hello"), strlen("Hello"), "ft_strlen(\"Hello\") should return 5");
-}
+	size = strlen("Hello World");
+    cr_assert_eq(ft_strlen("Hello World"), strlen("Hello World"), "Output should be: %d\n", size);
+	cr_log_info("✅ Test 2: Passed\n");
 
-Test(ft_strlen, string_with_spaces) {
-    cr_assert_eq(ft_strlen("Hello World"), strlen("Hello World"), "ft_strlen(\"Hello World\") should return 11");
-}
+	const char *long_str = "This is a very long string for testing purposes.";
+	size = strlen(long_str);
+    cr_assert_eq(ft_strlen(long_str), strlen(long_str), "Output should be: %d\n", size);
+	cr_log_info("✅ Test 3: Passed\n");
 
-Test(ft_strlen, long_string) {
-    const char *long_str = "This is a very long string for testing purposes.";
-    cr_assert_eq(ft_strlen(long_str), strlen(long_str), "ft_strlen(long_str) should match standard strlen");
+	size = strlen("");
+    cr_assert_eq(ft_strlen(""), strlen(""), "Output should be: %d\n", size);
+	cr_log_info("✅ Test 4: Passed\n");
+
+	ft_strlen(NULL);
+	cr_log_info("❌ Test 5: Failed\n");
 }

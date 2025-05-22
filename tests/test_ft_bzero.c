@@ -1,69 +1,67 @@
-#include "../libft.h"
+#include "../libft_files/libft.h"
 #include <criterion/criterion.h>
-#include <criterion/redirect.h>
 #include <string.h>
-#include <stdlib.h>
+#include <signal.h>
 
-Test(ft_bzero, zero_length)
-{
-    char ft_buf[10] = "abcdefghi";
-    char std_buf[10] = "abcdefghi";
 
-    ft_bzero(ft_buf, 0);
-    bzero(std_buf, (size_t)0);
+Test(ft_bzero, testing_ft_bzero) {
+	cr_log_info("\n============= FT_BZERO =============\n");
+	char passed[10] = "Hello";
+    char expected[10] = "Hello";
+	size_t i = 4;
 
-    cr_assert_arr_eq(ft_buf, std_buf, 10, "Buffers should remain unchanged with zero length");
+    ft_bzero(passed, i);
+    bzero(expected, i);
+    cr_assert_arr_eq(passed, expected, 10);
+    cr_log_info("✅ Test: Zero first 4 bytes\n");
+
+	i = 0;
+    strcpy(passed, "Hello");
+    strcpy(expected, "Hello");
+    ft_bzero(passed, i);
+    bzero(expected, i);
+    cr_assert_arr_eq(passed, expected, 10);
+    cr_log_info("✅ Test: Zero 0 bytes (no change)\n");
+
+	i = 10;
+    strcpy(passed, "Hello");
+    strcpy(expected, "Hello");
+    ft_bzero(passed, i);
+    bzero(expected, i);
+    cr_assert_arr_eq(passed, expected, 10);
+    cr_log_info("✅ Test: Zero entire buffer\n");
 }
 
-Test(ft_bzero, partial_zero)
-{
-    char ft_buf[10] = "abcdefghi";
-    char std_buf[10] = "abcdefghi";
+Test(ft_bzero, large_buffer) {
+	char passed[1000];
+	char expected[1000];
 
-    ft_bzero(ft_buf, 4);
-    bzero(std_buf, 4);
+	memset(passed, 'X', 1000);
+	memset(expected, 'X', 1000);
 
-    cr_assert_arr_eq(ft_buf, std_buf, 10, "First 4 bytes should be zeroed, rest unchanged");
+	ft_bzero(passed, 1000);
+	bzero(expected, 1000);
+	cr_assert_arr_eq(passed, expected, 1000);
+	cr_log_info("✅ Test: Large buffer zeroing\n");
 }
 
-Test(ft_bzero, full_zero)
-{
-    char ft_buf[10] = "abcdefghi";
-    char std_buf[10] = "abcdefghi";
+Test(ft_bzero, already_zeroed_buffer) {
+	char passed[5] = {0};
+	char expected[5] = {0};
 
-    ft_bzero(ft_buf, 10);
-    bzero(std_buf, 10);
-
-    cr_assert_arr_eq(ft_buf, std_buf, 10, "All bytes should be zeroed");
+	ft_bzero(passed, 5);
+	bzero(expected, 5);
+	cr_assert_arr_eq(passed, expected, 5);
+	cr_log_info("✅ Test: Zero already-zeroed buffer\n");
 }
 
-Test(ft_bzero, zeroing_dynamic_memory)
-{
-    char *ft_buf = malloc(20);
-    char *std_buf = malloc(20);
+Test(ft_bzero, zero_partial_garbage_buffer) {
+	char passed[10] = {'A', 'B', 'C', 'D', 'E', 'X', 'Y', 'Z', '!', '?'};
+	char expected[10];
+	memcpy(expected, passed, 10);
 
-    memset(ft_buf, 'x', 20);
-    memset(std_buf, 'x', 20);
-
-    ft_bzero(ft_buf, 20);
-    bzero(std_buf, 20);
-
-    cr_assert_arr_eq(ft_buf, std_buf, 20, "Dynamic memory should be fully zeroed");
-
-    free(ft_buf);
-    free(std_buf);
-}
-
-Test(ft_bzero, compare_with_memset_zero)
-{
-    char ft_buf[15];
-    char std_buf[15];
-
-    memset(ft_buf, 'A', 15);
-    memset(std_buf, 'A', 15);
-
-    ft_bzero(ft_buf + 5, 5);
-    memset(std_buf + 5, 0, 5);
-
-    cr_assert_arr_eq(ft_buf, std_buf, 15, "ft_bzero should behave like memset with 0");
+	ft_bzero(passed + 2, 5);
+	bzero(expected + 2, 5);
+	cr_assert_arr_eq(passed, expected, 10);
+	cr_log_info("✅ Test: Zero bytes in the middle of buffer\n");
 }

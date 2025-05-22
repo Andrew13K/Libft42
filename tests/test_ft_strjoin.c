@@ -1,6 +1,6 @@
 #include <criterion/criterion.h>
 #include <criterion/new/assert.h>
-#include "../libft.h"
+#include "../libft_files/libft.h"
 
 Test(ft_strjoin, both_strings_non_null)
 {

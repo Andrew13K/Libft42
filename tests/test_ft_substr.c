@@ -1,5 +1,5 @@
 #include <criterion/criterion.h>
-#include "../libft.h"
+#include "../libft_files/libft.h"
 
 Test(ft_substr, normal_substring_extraction)
 {
