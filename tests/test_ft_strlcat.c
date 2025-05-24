@@ -2,7 +2,6 @@
 #include <bsd/string.h>
 #include <string.h>
 #include <criterion/criterion.h>
-#include <criterion/hooks.h>
 
 Test(ft_strlcat, test_strlcat)
 {

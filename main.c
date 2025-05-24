@@ -2,21 +2,20 @@
 #include <stdio.h>
 #include <bsd/string.h>
 
+char my_uppercase(unsigned int i, char c)
+{
+	(void)i; // index is not used
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	return c;
+}
+
+
 int main()
 {
-	char str[10] = "Hello";
-	int nums[] = {1, 2, 3, 4};
-	size_t i = 0;
-
-	for (int i = 0; i < strlen(str); i++)
-	{
-		printf("%c, ", str[i]);
-	}
-	bzero(str, i);
-	printf("\n");
-	for (int i = 0; i < 11; i++) {
-    printf("str[%d] = %d ('%c')\n", i, str[i], str[i]);
-}
-	
+	char *res;
+	char *str = "1234";
+	res = ft_strmapi(str, my_uppercase);
+	printf("Result: %s\n", res);
 	return 0;
 }

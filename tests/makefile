@@ -12,10 +12,8 @@ NAME=testing
 test:$(NAME)
 $(NAME):$(OBJ)
 	$(CC) $(CRITERION_FLAG) $(BSD_FLAG) $(CFLAGS) $(OBJ) -o $(NAME)
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
-run_%: test_%.c ../libft_files/%.c
-	$(CC) $(CFLAGS) $^ $(CRITERION_FLAG) $(BSD_FLAG) -o $@
+run_%: test_%.c ../libft_files/libft.a
+	$(CC) $(CFLAGS) $< -L../libft_files -lft $(CRITERION_FLAG) $(BSD_FLAG) -o $@
 	./$@
 clean:
 	$(RM) $(OBJ) $(NAME) run_*

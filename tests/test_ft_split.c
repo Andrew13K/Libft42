@@ -5,35 +5,40 @@
 Test(ft_split, basic_test)
 {
     char **result = ft_split("Hello World", ' ');
-    cr_assert_str_eq(result[0], "Hello", "First word should be 'Hello'");
-    cr_assert_str_eq(result[1], "World", "Second word should be 'World'");
-    cr_assert_eq(result[2], NULL, "Array should be NULL-terminated");
+    cr_assert_str_eq(result[0], "Hello", "❌ Failed: correct output for result[0] = \"Hello\"\n");
+    cr_assert_str_eq(result[1], "World", "❌ Failed: correct output for result[1] = \"World\"\n");
+    cr_assert_eq(result[2], NULL, "❌ Failed: correct output for result[2] = \"NULL\"\n");
+	cr_log_info("✅ Pass \n");
 }
 
 Test(ft_split, multiple_delimiters)
 {
     char **result = ft_split("Hello  World  ", ' ');
-    cr_assert_str_eq(result[0], "Hello", "First word should be 'Hello'");
-    cr_assert_str_eq(result[1], "World", "Second word should be 'World'");
-    cr_assert_eq(result[2], NULL, "Array should be NULL-terminated");
+    cr_assert_str_eq(result[0], "Hello", "❌ Failed: correct output for result[0] = \"Hello\"\n");
+    cr_assert_str_eq(result[1], "World", "❌ Failed: correct output for result[1] = \"World\"\n");
+    cr_assert_eq(result[2], NULL, "❌ Failed: correct output for result[2] = \"NULL\"\n");
+	cr_log_info("✅ Pass \n");
 }
 
 Test(ft_split, empty_string)
 {
     char **result = ft_split("", ' ');
-    cr_assert_eq(result[0], NULL, "Array should be NULL-terminated for empty string");
+    cr_assert_eq(result[0], NULL, "❌ Failed: correct output for result[0] = \"NULL\"\n");
+	cr_log_info("✅ Pass \n");
 }
 
 Test(ft_split, string_with_multiple_delimiters)
 {
     char **result = ft_split("   Hello   World   ", ' ');
-    cr_assert_str_eq(result[0], "Hello", "First word should be 'Hello'");
-    cr_assert_str_eq(result[1], "World", "Second word should be 'World'");
-    cr_assert_eq(result[2], NULL, "Array should be NULL-terminated");
+    cr_assert_str_eq(result[0], "Hello", "❌ Failed: correct output for result[0] = \"Hello\"\n");
+    cr_assert_str_eq(result[1], "World", "❌ Failed: correct output for result[1] = \"World\"\n");
+    cr_assert_eq(result[2], NULL, "❌ Failed: correct output for result[2] = \"NULL\"\n");
+	cr_log_info("✅ Pass \n");
 }
 
 Test(ft_split, string_with_null)
 {
     char **result = ft_split(NULL, ' ');
-    cr_assert_eq(result, NULL, "Function should return NULL when the input is NULL");
+    cr_assert_null(result, "❌ Failed: correct output = \"NULL\"\n");
+	cr_log_info("✅ Pass \n");
 }

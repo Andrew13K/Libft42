@@ -13,7 +13,8 @@ Test(ft_striteri, basic_case)
     char str[] = "hello";
 
     ft_striteri(str, to_uppercase);
-    cr_assert_str_eq(str, "HELLO", "ft_striteri did not convert the string to uppercase correctly");
+    cr_assert_str_eq(str, "HELLO", "❌ Failed: correct output = \"HELLO\"\n");
+	cr_log_info("✅ Pass \n");
 }
 
 Test(ft_striteri, empty_string)
@@ -21,7 +22,8 @@ Test(ft_striteri, empty_string)
     char str[] = "";
 
     ft_striteri(str, to_uppercase);
-    cr_assert_str_eq(str, "", "ft_striteri should not modify an empty string");
+    cr_assert_str_eq(str, "", "❌ Failed: correct output = \"\"\n");
+	cr_log_info("✅ Pass \n");
 }
 
 Test(ft_striteri, single_char)
@@ -29,11 +31,13 @@ Test(ft_striteri, single_char)
     char str[] = "a";
 
     ft_striteri(str, to_uppercase);
-    cr_assert_str_eq(str, "A", "ft_striteri did not convert the single character to uppercase");
+    cr_assert_str_eq(str, "A", "❌ Failed: correct output = \"A\"\n");
+	cr_log_info("✅ Pass \n");
 }
 
 Test(ft_striteri, null_string)
 {
-    ft_striteri(NULL, to_uppercase);
+	ft_striteri(NULL, to_uppercase);
     cr_assert(1);
+	cr_log_info("✅ Pass \n");
 }
