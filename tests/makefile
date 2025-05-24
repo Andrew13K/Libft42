@@ -12,11 +12,11 @@ NAME=testing
 test:$(NAME)
 $(NAME):$(OBJ)
 	$(CC) $(CRITERION_FLAG) $(BSD_FLAG) $(CFLAGS) $(OBJ) -o $(NAME)
-run_%: test_%.c ../libft_files/libft.a
+%: test_%.c ../libft_files/libft.a
 	$(CC) $(CFLAGS) $< -L../libft_files -lft $(CRITERION_FLAG) $(BSD_FLAG) -o $@
 	./$@
 clean:
-	$(RM) $(OBJ) $(NAME) run_*
+	$(RM) $(OBJ) $(NAME) ft_*
 fclean: clean
 	$(RM) $(NAME)
 re: fclean test

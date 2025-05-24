@@ -13,7 +13,7 @@ Test(ft_bzero, testing_ft_bzero) {
     ft_bzero(passed, i);
     bzero(expected, i);
     cr_assert_arr_eq(passed, expected, 10);
-    cr_log_info("✅ Test: Zero first 4 bytes\n");
+    cr_log_info("✅ Pass \n");
 
 	i = 0;
     strcpy(passed, "Hello");
@@ -21,7 +21,7 @@ Test(ft_bzero, testing_ft_bzero) {
     ft_bzero(passed, i);
     bzero(expected, i);
     cr_assert_arr_eq(passed, expected, 10);
-    cr_log_info("✅ Test: Zero 0 bytes (no change)\n");
+    cr_log_info("✅ Pass \n");
 
 	i = 10;
     strcpy(passed, "Hello");
@@ -29,7 +29,7 @@ Test(ft_bzero, testing_ft_bzero) {
     ft_bzero(passed, i);
     bzero(expected, i);
     cr_assert_arr_eq(passed, expected, 10);
-    cr_log_info("✅ Test: Zero entire buffer\n");
+    cr_log_info("✅ Pass \n");
 }
 
 Test(ft_bzero, large_buffer) {
@@ -42,7 +42,7 @@ Test(ft_bzero, large_buffer) {
 	ft_bzero(passed, 1000);
 	bzero(expected, 1000);
 	cr_assert_arr_eq(passed, expected, 1000);
-	cr_log_info("✅ Test: Large buffer zeroing\n");
+	cr_log_info("✅ Pass \n");
 }
 
 Test(ft_bzero, already_zeroed_buffer) {
@@ -52,7 +52,7 @@ Test(ft_bzero, already_zeroed_buffer) {
 	ft_bzero(passed, 5);
 	bzero(expected, 5);
 	cr_assert_arr_eq(passed, expected, 5);
-	cr_log_info("✅ Test: Zero already-zeroed buffer\n");
+	cr_log_info("✅ Pass \n");
 }
 
 Test(ft_bzero, zero_partial_garbage_buffer) {
@@ -63,5 +63,17 @@ Test(ft_bzero, zero_partial_garbage_buffer) {
 	ft_bzero(passed + 2, 5);
 	bzero(expected + 2, 5);
 	cr_assert_arr_eq(passed, expected, 10);
-	cr_log_info("✅ Test: Zero bytes in the middle of buffer\n");
+	cr_log_info("✅ Pass \n");
+}
+
+Test(ft_bzero, size_0_no_crash)
+{
+    ft_bzero(NULL, 0);
+    cr_log_info("✅ Pass \n");
+}
+
+Test(ft_bzero, size_1_crash, .signal = SIGSEGV)
+{
+    ft_bzero(NULL, 1);
+	cr_log_info("❌ Fail \n");
 }

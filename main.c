@@ -2,20 +2,13 @@
 #include <stdio.h>
 #include <bsd/string.h>
 
-char my_uppercase(unsigned int i, char c)
-{
-	(void)i; // index is not used
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	return c;
-}
-
-
 int main()
 {
-	char *res;
-	char *str = "1234";
-	res = ft_strmapi(str, my_uppercase);
-	printf("Result: %s\n", res);
+	//char *str = "Hello cat cook";
+	int res;
+
+	res = ft_memcmp(NULL, "hello", 0);
+	printf("%d\n", res);
+
 	return 0;
 }

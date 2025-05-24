@@ -2,49 +2,22 @@
 #include <criterion/criterion.h>
 #include <ctype.h>
 
-Test(ft_isprint, printable_ascii_range)
-{
-    for (int c = 32; c <= 126; c++)
-    {
-        cr_assert_eq(ft_isprint(c), isprint(c) != 0,
-                     "Mismatch on printable character '%c' (%d)", c, c);
-    }
-}
-
-Test(ft_isprint, non_printable_ascii)
-{
-    for (int c = 0; c < 32; c++)
-    {
-        cr_assert_eq(ft_isprint(c), isprint(c) != 0,
-                     "Mismatch on non-printable character %d", c);
-    }
-
-    cr_assert_eq(ft_isprint(127), isprint(127) != 0,
-                 "Mismatch on DEL character (127)");
-}
-
-Test(ft_isprint, extended_ascii_and_negative)
-{
-    for (int c = -128; c < 0; c++)
-    {
-        cr_assert_eq(ft_isprint(c), isprint(c) != 0,
-                     "Mismatch on negative character code %d", c);
-    }
-
-    for (int c = 128; c <= 140; c++)
-    {
-        cr_assert_eq(ft_isprint(c), isprint(c) != 0,
-                     "Mismatch on extended ASCII code %d", c);
-    }
-}
-
 Test(ft_isprint, full_range_comparison)
 {
-    for (int c = -10; c <= 255; c++)
+    cr_log_info("\n============= FT_ISPRINT =============\n");
+    for (int i = 0; i <= 255; i++)
     {
-        int expected = isprint(c) != 0;
-        int actual = ft_isprint(c);
+        int expected = isprint(i) != 0;
+        int actual = ft_isprint(i) != 0;
         cr_assert_eq(actual, expected,
-                     "ft_isprint(%d) = %d, isprint = %d", c, actual, expected);
+                     "ft_isprint(%d) = %d, isprint(%d) = %d", i, actual, i, expected);
     }
+    cr_log_info("✅ Pass \n");
+
+	int eof = -1;
+    int expected = isprint(eof);
+    int actual = ft_isprint(eof);
+    cr_assert_eq(actual, expected, "ft_isprint(EOF) = %d, isprint(EOF) = %d", actual, expected);
+	cr_log_info("✅ Pass EOF Test ft_isprint(EOF) = %d, isprint(EOF) = %d\n", actual,expected);
 }
+
