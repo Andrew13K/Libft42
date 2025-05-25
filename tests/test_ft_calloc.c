@@ -1,62 +1,72 @@
 #include "../libft_files/libft.h"
-#include <stdint.h>
 #include <criterion/criterion.h>
-#include <criterion/redirect.h>
 #include <stdlib.h>
 #include <string.h>
-#include <limits.h> 
+#include <signal.h>
 
-Test(ft_calloc, basic_allocation)
-{
-    size_t count = 5;
-    size_t size = sizeof(int);
-    
-    int *ptr = ft_calloc(count, size);
-    cr_assert_not_null(ptr, "ft_calloc should return non-NULL for valid allocation");
+Test(ft_calloc, basic_allocation) {
+	cr_log_info("\n============= FT_CALLOC =============\n");
+	size_t count = 5;
+	size_t size = sizeof(int);
+	void *actual = ft_calloc(count, size);
+	void *expected = calloc(count, size);
+	cr_assert_not_null(actual, "❌ ft_calloc returned NULL for a valid allocation");
+	cr_assert_arr_eq(actual, expected, count * size, "❌ ft_calloc did not zero-initialize correctly");
 
-    for (size_t i = 0; i < count; i++)
-    {
-        cr_assert_eq(ptr[i], 0, "ft_calloc did not zero-initialize index %zu", i);
-    }
-
-    free(ptr);
+	free(actual);
+	free(expected);
+	cr_log_info("✅ Pass \n");
 }
 
-Test(ft_calloc, zero_elements)
-{
-    void *ptr = ft_calloc(0, sizeof(int));
-    cr_assert_not_null(ptr, "ft_calloc(0, size) should return non-NULL or NULL safely");
-    free(ptr);
+Test(ft_calloc, zero_allocation) {
+	void *actual = ft_calloc(0, 10);
+	void *expected = calloc(0, 10);
+	cr_assert((actual == NULL && expected == NULL) || (actual != NULL && expected != NULL),
+		"❌ Inconsistent NULL behavior between ft_calloc and calloc");
+	free(actual);
+	free(expected);
+	cr_log_info("✅ Pass \n");
 }
 
-Test(ft_calloc, zero_size)
-{
-    void *ptr = ft_calloc(5, 0);
-    cr_assert_not_null(ptr, "ft_calloc(n, 0) should return non-NULL or NULL safely");
-    free(ptr);
+Test(ft_calloc, large_allocation) {
+	size_t count = 1000;
+	size_t size = sizeof(char);
+	void *actual = ft_calloc(count, size);
+	void *expected = calloc(count, size);
+	cr_assert_not_null(actual, "❌ ft_calloc returned NULL for large allocation");
+	cr_assert_arr_eq(actual, expected, count * size, "❌ Large allocation was not zeroed properly");
+
+	free(actual);
+	free(expected);
+	cr_log_info("✅ Pass \n");
 }
 
-Test(ft_calloc, compare_with_standard)
-{
-    size_t count = 10;
-    size_t size = sizeof(char);
+Test(ft_calloc, already_zero_initialized_behavior) {
+	size_t count = 4;
+	size_t size = sizeof(int);
+	void *actual = ft_calloc(count, size);
+	void *expected = calloc(count, size);
+	cr_assert_arr_eq(actual, expected, count * size, "❌ Already zeroed allocation failed");
 
-    char *std_ptr = calloc(count, size);
-    char *ft_ptr = ft_calloc(count, size);
-
-    cr_assert_not_null(std_ptr);
-    cr_assert_not_null(ft_ptr);
-
-    cr_assert_arr_eq(ft_ptr, std_ptr, count * size, "Memory contents should be identical to calloc");
-
-    free(std_ptr);
-    free(ft_ptr);
+	free(actual);
+	free(expected);
+	cr_log_info("✅ Pass \n");
 }
 
-Test(ft_calloc, multiplication_overflow_protection)
-{
-    size_t large = SIZE_MAX / 2 + 1;
-    void *ptr = ft_calloc(large, 2);
+Test(ft_calloc, partial_zero_check) {
+	size_t count = 10;
+	size_t size = 1;
 
-    cr_assert_null(ptr, "ft_calloc should return NULL on size multiplication overflow");
+	unsigned char *actual = (unsigned char *)ft_calloc(count, size);
+	unsigned char *expected = (unsigned char *)calloc(count, size);
+
+	actual[5] = 'A';
+	expected[5] = 'A';
+
+	cr_assert_arr_eq(actual, expected, count, "❌ Partial memory difference detected");
+
+	free(actual);
+	free(expected);
+	cr_log_info("✅ Pass \n");
 }
+

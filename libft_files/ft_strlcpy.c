@@ -6,7 +6,7 @@
 /*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 18:59:30 by akosmeni          #+#    #+#             */
-/*   Updated: 2025/05/21 15:37:05 by akosmeni         ###   ########.fr       */
+/*   Updated: 2025/05/25 15:17:29 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,6 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 
 	i = 0;
 	j = 0;
-	if (!src)
-	{
-		dest[0] = '\0';
-		return (0);
-	}
 	while (src[j] != '\0')
 		j++;
 	if (size == 0)

@@ -1,37 +1,44 @@
 #include <criterion/criterion.h>
+#include <signal.h>
+#include <string.h>
 #include "../libft_files/libft.h"
 
-Test(ft_strchr, character_found)
+Test(ft_strchr, testing_ft_strchr)
 {
-    const char *str = "Hello, World!";
-    char *result = ft_strchr(str, 'W');
-    cr_assert_str_eq(result, "World!", "ft_strchr should return the substring starting from 'W'");
+    cr_log_info("\n============= FT_STRCHR =============\n");
+    const char *s = "Hello, World!";
+	char *actual = ft_strchr(s, 'o');
+	char *expected = strrchr(s, 'o');
+    cr_assert_eq(actual, expected, "❌ Failed: correct output = \"%s\", my output = \"%s\"\n", expected, actual);
+	cr_log_info("✅ Pass \n");
+
+	s = "Hello, World!";
+	actual = ft_strchr(s, 'H');
+	expected = strrchr(s, 'H');
+    cr_assert_eq(actual, expected, "❌ Failed: correct output = \"%s\", my output = \"%s\"\n", expected, actual);
+	cr_log_info("✅ Pass \n");
+
+	s = "Hello, World!";
+	actual = ft_strchr(s, '\0');
+	expected = strrchr(s, '\0');
+    cr_assert_eq(actual, expected, "❌ Failed: correct output = \"%s\", my output = \"%s\"\n", expected, actual);
+	cr_log_info("✅ Pass \n");
+
+	s = "Hello, World!";
+	actual = ft_strchr(s, 'l');
+	expected = strrchr(s, 'l');
+    cr_assert_eq(actual, expected, "❌ Failed: correct output = \"%s\", my output = \"%s\"\n", expected, actual);
+	cr_log_info("✅ Pass \n");
+
+	s = "Hello, World!";
+	actual = ft_strchr(s, 'z');
+	expected = strrchr(s, 'z');
+    cr_assert_eq(actual, expected, "❌ Failed: correct output = \"%s\", my output = \"%s\"\n", expected, actual);
+	cr_log_info("✅ Pass \n");
 }
 
-Test(ft_strchr, character_not_found)
+Test(ft_strchr, sigsegv_test, .signal = SIGSEGV)
 {
-    const char *str = "Hello, World!";
-    char *result = ft_strchr(str, 'z');
-    cr_assert_eq(result, NULL, "ft_strchr should return NULL when the character is not found");
-}
-
-Test(ft_strchr, null_terminator_found)
-{
-    const char *str = "Hello, World!";
-    char *result = ft_strchr(str, '\0');
-    cr_assert_eq(result, str + 13, "ft_strchr should return a pointer to the null terminator");
-}
-
-Test(ft_strchr, empty_string)
-{
-    const char *str = "";
-    char *result = ft_strchr(str, 'a');
-    cr_assert_eq(result, NULL, "ft_strchr should return NULL for an empty string");
-}
-
-Test(ft_strchr, first_character)
-{
-    const char *str = "Hello, World!";
-    char *result = ft_strchr(str, 'H');
-    cr_assert_eq(result, str, "ft_strchr should return the pointer to the first character if it is found");
+    ft_strchr(NULL, 'l');
+	cr_log_info("❌ Failed \n");
 }

@@ -58,7 +58,7 @@ Test(ft_bzero, already_zeroed_buffer) {
 Test(ft_bzero, zero_partial_garbage_buffer) {
 	char passed[10] = {'A', 'B', 'C', 'D', 'E', 'X', 'Y', 'Z', '!', '?'};
 	char expected[10];
-	memcpy(expected, passed, 10);
+	memmove(expected, passed, 10);
 
 	ft_bzero(passed + 2, 5);
 	bzero(expected + 2, 5);

@@ -4,11 +4,13 @@
 
 int main()
 {
-	//char *str = "Hello cat cook";
-	int res;
+	char *big = "hello";
+	char *res = ft_strrchr(NULL, 'k');
+	printf("Result: %s\n", res);
 
-	res = ft_memcmp(NULL, "hello", 0);
-	printf("%d\n", res);
 
 	return 0;
 }
+
+//TEST
+//ft_calloc

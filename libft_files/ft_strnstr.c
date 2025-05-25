@@ -6,7 +6,7 @@
 /*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 16:23:43 by akosmeni          #+#    #+#             */
-/*   Updated: 2025/05/21 15:39:19 by akosmeni         ###   ########.fr       */
+/*   Updated: 2025/05/25 15:44:24 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 	i = 0;
 	j = 0;
-	if (!little || little[0] == '\0')
+	if (little[0] == '\0')
 		return ((char *)big);
-	if (len == 0 || !big || big[0] == '\0')
+	if (len == 0 || big[0] == '\0')
 		return (NULL);
 	while (i < len && big[i] != '\0')
 	{
