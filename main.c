@@ -4,9 +4,9 @@
 
 int main()
 {
-	char *big = "hello";
-	char *res = ft_strrchr(NULL, 'k');
-	printf("Result: %s\n", res);
+	const char *s = "Hello, World!";
+	char *actual = ft_strrchr(s, 'o');
+	printf("Result: %s\n", actual);
 
 
 	return 0;

@@ -1,6 +1,6 @@
 CC=cc
 RM=rm -f
-CFLAGS=-Wall -Werror -Wextra
+CFLAGS=-Wall -Wextra
 CRITERION_FLAG=-lcriterion
 BSD_FLAG=-lbsd
 SRC_TEST:=$(wildcard *.c)

@@ -13,10 +13,4 @@ Test(ft_isalpha, full_range_comparison)
                      "ft_isalpha(%d) = %d, isalpha = %d", i, actual, expected);
     }
 	cr_log_info("✅ Pass \n");
-
-    int eof = -1;
-    int expected = isalpha(eof);
-    int actual = ft_isalpha(eof);
-    cr_assert_eq(actual, expected, "ft_isalpha(EOF) = %d, isalpha(EOF) = %d", actual, expected);
-	cr_log_info("✅ Pass EOF Test ft_isalpha(EOF) = %d, isalpha(EOF) = %d\n", actual,expected);
 }

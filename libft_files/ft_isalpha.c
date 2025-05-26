@@ -6,7 +6,7 @@
 /*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 09:20:50 by akosmeni          #+#    #+#             */
-/*   Updated: 2025/05/24 15:40:46 by akosmeni         ###   ########.fr       */
+/*   Updated: 2025/05/26 10:01:48 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_isalpha(int c)
 {
-	if (((unsigned char)c >= 'a' && (unsigned char)c <= 'z')
-		|| ((unsigned char)c >= 'A' && (unsigned char)c <= 'Z'))
+	if ((c >= 'a' && c <= 'z')
+		|| (c >= 'A' && c <= 'Z'))
 		return (1);
 	return (0);
 }

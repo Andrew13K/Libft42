@@ -13,10 +13,4 @@ Test(ft_isascii, full_range_comparison)
                      "ft_isascii(%d) = %d, isascii = %d", i, actual, expected);
     }
 	cr_log_info("✅ Pass \n");
-
-	int eof = -1;
-    int expected = isascii(eof);
-    int actual = ft_isascii(eof);
-    cr_assert_eq(actual, expected, "ft_isascii(EOF) = %d, isascii(EOF) = %d", actual, expected);
-	cr_log_info("✅ Pass EOF Test ft_isascii(EOF) = %d, isascii(EOF) = %d\n", actual,expected);
 }

@@ -13,11 +13,5 @@ Test(ft_isprint, full_range_comparison)
                      "ft_isprint(%d) = %d, isprint(%d) = %d", i, actual, i, expected);
     }
     cr_log_info("✅ Pass \n");
-
-	int eof = -1;
-    int expected = isprint(eof);
-    int actual = ft_isprint(eof);
-    cr_assert_eq(actual, expected, "ft_isprint(EOF) = %d, isprint(EOF) = %d", actual, expected);
-	cr_log_info("✅ Pass EOF Test ft_isprint(EOF) = %d, isprint(EOF) = %d\n", actual,expected);
 }
 

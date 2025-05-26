@@ -6,7 +6,7 @@
 /*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 17:37:47 by akosmeni          #+#    #+#             */
-/*   Updated: 2025/05/20 15:36:58 by akosmeni         ###   ########.fr       */
+/*   Updated: 2025/05/26 10:24:17 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		end;
 	char	*res;
 
-	if (!set || !s1)
+	if (!s1)
+		return (NULL);
+	if (!set)
 		return (ft_strdup(s1));
 	start = 0;
 	end = ft_strlen(s1);
@@ -32,11 +34,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	i = 0;
 	while (start < end)
-	{
-		res[i] = s1[start];
-		start++;
-		i++;
-	}
+		res[i++] = s1[start++];
 	res[i] = '\0';
 	return (res);
 }

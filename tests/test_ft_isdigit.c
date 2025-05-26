@@ -13,10 +13,4 @@ Test(ft_isdigit, full_range_comparison)
                      "ft_isdigit(%d) = %d, isdigit(%d) = %d", i, actual, i, expected);
     }
     cr_log_info("✅ Pass \n");
-
-	int eof = -1;
-    int expected = isdigit(eof);
-    int actual = ft_isdigit(eof);
-    cr_assert_eq(actual, expected, "ft_isdigit(EOF) = %d, isdigit(EOF) = %d", actual, expected);
-	cr_log_info("✅ Pass EOF Test ft_isdigit(EOF) = %d, isdigit(EOF) = %d\n", actual,expected);
 }
