@@ -21,8 +21,7 @@ Test(ft_calloc, basic_allocation) {
 Test(ft_calloc, zero_allocation) {
 	void *actual = ft_calloc(0, 10);
 	void *expected = calloc(0, 10);
-	cr_assert((actual == NULL && expected == NULL) || (actual != NULL && expected != NULL),
-		"❌ Inconsistent NULL behavior between ft_calloc and calloc");
+	cr_assert_arr_eq(actual, expected, 0, "❌ Failed\n");
 	free(actual);
 	free(expected);
 	cr_log_info("✅ Pass \n");
