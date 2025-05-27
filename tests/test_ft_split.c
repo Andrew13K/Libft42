@@ -36,6 +36,14 @@ Test(ft_split, string_with_multiple_delimiters)
 	cr_log_info("✅ Pass \n");
 }
 
+Test(ft_split, delimiter_not_in_string)
+{
+    char **result = ft_split("Hello how are you", '!');
+    cr_assert_str_eq(result[0], "Hello how are you", "❌ Failed: correct output for result[0] = \"Hello how are you\"\n");
+    cr_assert_eq(result[1], NULL, "❌ Failed: correct output for result[1] = \"NULL\"\n");
+	cr_log_info("✅ Pass \n");
+}
+
 Test(ft_split, string_with_null)
 {
     char **result = ft_split(NULL, ' ');

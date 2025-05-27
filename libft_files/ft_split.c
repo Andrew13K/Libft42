@@ -6,7 +6,7 @@
 /*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 08:58:40 by akosmeni          #+#    #+#             */
-/*   Updated: 2025/05/21 15:17:28 by akosmeni         ###   ########.fr       */
+/*   Updated: 2025/05/27 08:37:02 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	free_str(char **res)
 {
-	int	i;
+	size_t	i;
 
 	if (!res)
 		return ;
@@ -29,10 +29,10 @@ static void	free_str(char **res)
 
 static char	**alloc_memory_arr(char const *s, char c)
 {
-	char	**str;
-	int		i;
-	int		count;
-	int		in_word;
+	char		**str;
+	size_t		i;
+	size_t		count;
+	size_t		in_word;
 
 	i = 0;
 	count = 0;
@@ -56,8 +56,8 @@ static char	**alloc_memory_arr(char const *s, char c)
 
 static char	*alloc_memory_str(const char *str, char c)
 {
-	int		i;
-	char	*new_str;
+	size_t		i;
+	char		*new_str;
 
 	i = 0;
 	while (str[i] != c && str[i] != '\0')
@@ -70,9 +70,9 @@ static char	*alloc_memory_str(const char *str, char c)
 
 static char	**sort_str(char const *s, char c, char **res)
 {
-	int		i;
-	int		j;
-	int		index;
+	size_t		i;
+	size_t		j;
+	size_t		index;
 
 	i = 0;
 	index = 0;

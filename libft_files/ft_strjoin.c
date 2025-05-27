@@ -6,7 +6,7 @@
 /*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 15:59:33 by akosmeni          #+#    #+#             */
-/*   Updated: 2025/05/21 15:25:28 by akosmeni         ###   ########.fr       */
+/*   Updated: 2025/05/27 08:40:45 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ static char	*check(char const *s1, char const *s2)
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*check_str;
-	char	*res;
-	int		len1;
-	int		len2;
+	char		*check_str;
+	char		*res;
+	size_t		len1;
+	size_t		len2;
 
 	if (!s1 && !s2)
 		return (NULL);

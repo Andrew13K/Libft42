@@ -6,7 +6,7 @@
 /*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 12:12:22 by akosmeni          #+#    #+#             */
-/*   Updated: 2025/05/16 12:17:50 by akosmeni         ###   ########.fr       */
+/*   Updated: 2025/05/27 08:19:00 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	int	len;
+	size_t	len;
 
 	if (s)
 	{

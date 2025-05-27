@@ -6,7 +6,7 @@
 /*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 17:37:47 by akosmeni          #+#    #+#             */
-/*   Updated: 2025/05/26 10:24:17 by akosmeni         ###   ########.fr       */
+/*   Updated: 2025/05/27 08:44:32 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		start;
-	int		i;
-	int		end;
+	size_t		start;
+	size_t		i;
+	size_t		end;
 	char	*res;
 
 	if (!s1)

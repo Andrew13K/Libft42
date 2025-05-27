@@ -6,14 +6,13 @@
 /*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 09:21:45 by akosmeni          #+#    #+#             */
-/*   Updated: 2025/05/21 16:12:06 by akosmeni         ###   ########.fr       */
+/*   Updated: 2025/05/27 08:10:04 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stddef.h>
 # include <unistd.h>
 # include <stdlib.h>
 

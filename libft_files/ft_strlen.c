@@ -6,7 +6,7 @@
 /*   By: akosmeni <akosmeni@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 20:42:27 by akosmeni          #+#    #+#             */
-/*   Updated: 2025/05/22 13:40:22 by akosmeni         ###   ########.fr       */
+/*   Updated: 2025/05/27 08:37:06 by akosmeni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlen(const char *s)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	if (s[0] == '\0')
